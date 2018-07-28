@@ -25,7 +25,7 @@
 
                     text = initialValue +  parentText + ((parentText == '') ? "" : ".") + $(this).text();
                     $(".editor").val(initialValue + '.' + text);
-                }
+                } 
             }
 
             
