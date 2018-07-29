@@ -5,18 +5,19 @@
     margin: 0;
     padding: 0;
     overflow: hidden;
-    color: font-family: 'Open Sans Condensed', sans-serif;
+    line-height: 1.2;
 }
 
 .float-div {
+    font-size: 10.5px;
     display: inline-block;
     width: 49%;
-    height: 40%;
+    height: 38%;
     vertical-align: top;
     border: 1px solid #4C3C1B;
-    background-color: white;
+    background-color: #f3f5f6;
     border-style: double;
-    padding: 14px;
+    padding: 4px;
     border-top-style: dotted;
     border-bottom-style: dashed;
     border-left-style: dotted;
@@ -27,12 +28,15 @@
 }
 
 .editor {
+    font-family: 'Lato', sans-serif;
     height: 100%;
     width: 100%;
-    font-family: Consolas;
+    /*font-family: Consolas;*/
     font-size: 18px;
     resize: none;
-
+    background-color: #eff0f1;
+    font-size: 13px;
+    color: #7D2727;
 }
 
 #textareacontainer, #iframecontainer {
@@ -60,4 +64,32 @@
     background-color: #ffffff;
     position: relative;
     box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24);
+}
+
+.expression-header {
+    font-family: 'Lato', sans-serif;
+    height: 30px;
+    font-weight: 700;
+    background-color: #fff;
+    box-shadow: 0 1px 0 rgba(12,13,14,0.1), 0 1px 6px rgba(59,64,69,0.1);
+    background-color: #fafafb;
+    transition: box-shadow cubic-bezier(.165, .84, .44, 1) .25s;
+}
+
+
+.headings {
+    color: #0F74BD;
+    margin-top: 5px;
+    margin-left: 15px;
+}
+
+.box-headers {
+    padding-top:4px;
+    font-family: 'Lato', sans-serif;
+    display: block;
+    height: 20px;
+    vertical-align: central;
+    background-color: black;
+    color: white;
+    text-align: center;
 }

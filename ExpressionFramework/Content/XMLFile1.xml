@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+
+<FundHeirarchy name="FundHeirarchy" type="FundHeirarchy" isList="false" isProcessable="false">
+  <FundID name="FundID" type="Int32" isList="false" isProcessable="true" />
+  <FundInvestmentClasses name="FundInvestmentClasses" type="InvestmentClass" isList="true" isProcessable="false">
+    <Fund name="Fund" type="FundHeirarchy" isList="false" isProcessable="false" />
+    <ClassBalance name="ClassBalance" type="IInvestorBalances" isList="false" isProcessable="false">
+      <PartitionID name="PartitionID" type="Int64" isList="false" isProcessable="true" />
+      <InvestorClassID name="InvestorClassID" type="Int32" isList="false" isProcessable="true" />
+      <InvestorID name="InvestorID" type="Int32" isList="false" isProcessable="true" />
+      <ClassID name="ClassID" type="Int32" isList="false" isProcessable="true" />
+      <InvestorSeries name="InvestorSeries" type="String" isList="false" isProcessable="true" />
+      <BeginBalance name="BeginBalance" type="Decimal" isList="false" isProcessable="true" />
+      <StartAdditionAmount name="StartAdditionAmount" type="Decimal" isList="false" isProcessable="true" />
+      <EndingBalance name="EndingBalance" type="Decimal" isList="false" isProcessable="true" />
+    </ClassBalance>
+    <InvestmentAccounts name="InvestmentAccounts" type="InvestmentAccount" isList="true" isProcessable="false">
+      <Fund name="Fund" type="FundHeirarchy" isList="false" isProcessable="false" />
+      <InvestorBalance name="InvestorBalance" type="IInvestorBalances" isList="false" isProcessable="false" />
+      <Class name="Class" type="InvestmentClass" isList="false" isProcessable="false" />
+      <InvestorClassID name="InvestorClassID" type="Int32" isList="false" isProcessable="true" />
+      <InvestmentAccountID name="InvestmentAccountID" type="Int32" isList="false" isProcessable="true" />
+    </InvestmentAccounts>
+    <ClassID name="ClassID" type="Int32" isList="false" isProcessable="true" />
+  </FundInvestmentClasses>
+  <FundBalances name="FundBalances" type="IInvestorBalances" isList="false" isProcessable="false">
+    <PartitionID name="PartitionID" type="Int64" isList="false" isProcessable="true" />
+    <InvestorClassID name="InvestorClassID" type="Int32" isList="false" isProcessable="true" />
+    <InvestorID name="InvestorID" type="Int32" isList="false" isProcessable="true" />
+    <ClassID name="ClassID" type="Int32" isList="false" isProcessable="true" />
+    <InvestorSeries name="InvestorSeries" type="String" isList="false" isProcessable="true" />
+    <BeginBalance name="BeginBalance" type="Decimal" isList="false" isProcessable="true" />
+    <StartAdditionAmount name="StartAdditionAmount" type="Decimal" isList="false" isProcessable="true" />
+    <EndingBalance name="EndingBalance" type="Decimal" isList="false" isProcessable="true" />
+  </FundBalances>
+  <FundStartDate name="FundStartDate" type="DateTime" isList="false" isProcessable="true" />
+</FundHeirarchy>

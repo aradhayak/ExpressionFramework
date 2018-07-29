@@ -1,33 +1,38 @@
-﻿@{
+﻿@model ExpressionFramework.Models.HomeViewModel
+@{
     ViewBag.Title = "Home Page";
 }
 <div class="main-container" style="height: 800px;">
-    <div class="float-div">
-        <label>Entites</label>
-        <ul class="list">
-            <li class="items">
-                <div>
-                    <div class="tag">Fund</div>
-                    <ul>
-                        <li>Fund Start Date</li>
-                        <li>Daily Period Frequency</li>
-                        <li>Transaction Indicator</li>
-                        <li>Begin Balance</li>
-                    </ul>
-                </div>
-            </li>
-            <li class="items">Accounting Periods</li>
-            <li class="items">Addition Activity</li>
-            <li class="items">Balance Sheet</li>
-            <li class="items">Income Expense</li>
-            <li class="items">Ledger Balance</li>
-            <li class="items">Accounting Adjustments</li>
-            <li class="items">Accounts</li>
-            <li class="items">Brokers</li>
-        </ul>
+    <div class="float-div" style="overflow:scroll;">
+        <label class="box-headers">Entites</label>
+        @*<ul class="list">
+
+                @*<li class="items">
+                        <div>
+                            <div class="tag">Fund</div>
+                            <ul>
+                                <li>Fund Start Date</li>
+                                <li>Daily Period Frequency</li>
+                                <li>Transaction Indicator</li>
+                                <li>Begin Balance</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="items">Accounting Periods</li>
+                    <li class="items">Addition Activity</li>
+                    <li class="items">Balance Sheet</li>
+                    <li class="items">Income Expense</li>
+                    <li class="items">Ledger Balance</li>
+                    <li class="items">Accounting Adjustments</li>
+                    <li class="items">Accounts</li>
+                    <li class="items">Brokers</li>
+            </ul>*@
+
+        @ShowTree(Model.Node)
+
     </div>
     <div class="float-div">
-        <label>Operations</label>
+        <label class="box-headers">Operations</label>
         <ul class="list">
             <li class="items">
                 <div>
@@ -55,7 +60,7 @@
             </li>
         </ul>
     </div>
-    <div style="height: 220px; float: left; width: 98%;">
+    <div style="height: 150px; float: left; width: 98%;">
         <div id="textareacontainer">
             <div id="textarea">
                 <div id="textareawrapper">
@@ -64,5 +69,44 @@
                 </div>
             </div>
         </div>
+
         <div style="clear:both;"></div>
+        <div>
+            <div style="margin-bottom:20px; display:inline;">
+                <button>Evaluate Expression</button>
+            </div>
+            <div style="margin-bottom:20px; display:inline;">
+                <button>Save & Return</button>
+            </div>
+            <div style="clear:both;"></div>
+        </div>
     </div>
+
+    @helper ShowTree(ExpressionFramework.Models.Node foos)
+    {
+        <ul class="list">
+            @foreach (var foo in foos.ChildNodes)
+            {
+                <li property="@foo.name">
+                    @if (!foo.HasChild)
+                    {
+                        @foo.name
+                        if (foo.HasChild)
+                        {
+                            @ShowTree(foo)
+                        }
+                    }
+                    else
+                    {
+                        <div>
+                            <div property="@foo.name" class="tag"> @foo.name</div>
+                            @if (foo.HasChild)
+                            {
+                                @ShowTree(foo)
+                            }
+                        </div>
+                    }
+                </li>
+            }
+        </ul>
+    }
